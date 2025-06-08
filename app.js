@@ -50,32 +50,43 @@ function CreateThumbnails()
 }
 
 CreateThumbnails();
+CreateSelectedImage(images[imageIterator]);
 
 function CreateSelectedImage(imageDetails)
 {
     imageCanvas.innerHTML = "";
     let selectedImage = document.createElement("img");
 
-    console.log(selectedImage);
-
     selectedImage.src = imageDetails.imageSrc;
     selectedImage.alt = imageDetails.alt;
+    selectedImage.classList.add("selected-image");
 
     imageCanvas.appendChild(selectedImage);
 }
 
 previousButton.addEventListener("click", function () {
-    imageIterator--;
-
-    if(imageIterator < 0) {imageIterator = images.length - 1;}
-
-    CreateSelectedImage(images[imageIterator]);
+    LoadPreviousImage();
 });
 
 nextButton.addEventListener("click", function () {
-    imageIterator++;
-
-    if(imageIterator == images.length) {imageIterator = 0;}
-
-    CreateSelectedImage(images[imageIterator]);
+    LoadNextImage();
 });
+
+window.addEventListener("keydown", function (event) {
+    if(event.code === "ArrowLeft") {LoadPreviousImage();}
+    if(event.code === "ArrowRight") {LoadNextImage();}
+})
+
+function LoadNextImage()
+{
+    imageIterator++;
+    if(imageIterator == images.length) {imageIterator = 0;}
+    CreateSelectedImage(images[imageIterator]);
+}
+
+function LoadPreviousImage()
+{
+    imageIterator--;
+    if(imageIterator < 0) {imageIterator = images.length - 1;}
+    CreateSelectedImage(images[imageIterator]);
+}
