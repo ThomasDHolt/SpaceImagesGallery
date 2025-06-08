@@ -33,7 +33,33 @@ body {
 }
 
 .selected-image {
-    width: 70vw;
+    width: 40vw;
+    height: 40vw;
+}
+
+@media (max-width: 800px) and (orientation: portrait)
+{
+    .selected-image {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .thumbnail {
+        width: 20vw;
+        height: 20vw;
+    }
+}
+
+@media (max-height: 800px) and (orientation: landscape)
+{
+    .selected-image {
+        width: 50vw;
+    }
+
+    .thumbnail {
+        width: 30vh;
+        height: 30vh;
+    }
 }
 
 .relative {

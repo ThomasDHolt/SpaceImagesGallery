@@ -60,6 +60,7 @@ function CreateSelectedImage(imageDetails)
     selectedImage.src = imageDetails.imageSrc;
     selectedImage.alt = imageDetails.alt;
     selectedImage.classList.add("selected-image");
+    console.log(selectedImage);
 
     imageCanvas.appendChild(selectedImage);
 }
