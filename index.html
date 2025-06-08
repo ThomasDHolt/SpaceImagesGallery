@@ -9,14 +9,16 @@
 </head>
 <body>
     <main>
-        <div id="imageCanvas" class="selected-image-container flex-container flex-centre-horizontal relative">
-            <div class="flex-container flex-row flex-centre-vertical flex-space-between absolute cover-screen">
-                <button id="previousButton">&lt;</button>
-                <button id="nextButton">&gt;</button>
+        <div class="cover-screen flex-container flex-centre-horizontal relative">
+            <div id="imageContainer" class="absolute"></div>
+            <div class="cover-screen flex-container flex-centre-vertical flex-space-between absolute">
+                <button id="previousButton"><</button>
+                <button id="nextButton">></button>
             </div>
-            <div class="flex-container flex-centre-horizontal flex-bottom absolute cover-screen">
-                <div id="imageSelector" class="flex-container flex-row"></div>
+            <div class="flex-container flex-centre-horizontal flex-bottom">
+                <div id="thumbnailContainer" class="absolute"></div>
             </div>
+            
         </div>
     </main>
     <footer>
